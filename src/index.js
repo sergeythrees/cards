@@ -40,7 +40,7 @@ function Deck() {
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return props.map(({ x, y, rot, scale }, i) => (
     <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
-      <div style={{ borderRadius: 200, width: 100, height: 100, backgroundColor: 'white' }} />
+      <div style={{ borderRadius: 200, width: 100, height: 100, backgroundColor: 'green' }} />
       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
       <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
     </animated.div>
